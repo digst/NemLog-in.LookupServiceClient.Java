@@ -27,7 +27,7 @@ public class Application implements CommandLineRunner {
 	private RestTemplate restTemplate;
 
 	private static ResponseEntity<String> restServiceResponse;
-	private static String requestUrl = "https://lookupservice.devtest4-nemlog-in.dk/api/lookup/pidmatchescpr?pid=9208-2002-2-634921274895&cpr=1904481382";
+	private static String requestUrl = "https://lookupservice.devtest4-nemlog-in.dk/api/lookup/pidmatchescpr";
 	private static String tokenUrl = "https://lookupservice.devtest4-nemlog-in.dk/api/accesstoken/issue";
 	private static String audience = "https://saml.wsp.lookupservice.devtest4-nemlog-in.dk";
 
@@ -44,10 +44,13 @@ public class Application implements CommandLineRunner {
 		HttpHeaders headers = new HttpHeaders();
 		headers.add("Authorization", "Holder-of-key " + accessToken.getToken());
 
-		// call service
-		restServiceResponse = restTemplate.exchange(requestUrl, HttpMethod.POST, new HttpEntity<>("", headers), String.class);
+		// specify content type
+		headers.add("content-type", "application/x-www-form-urlencoded");
 
-		// should print out "Hello John"
+		// call service with request parameters in body
+		restServiceResponse = restTemplate.exchange(requestUrl, HttpMethod.POST, new HttpEntity<>("pid=9208-2002-2-142041734312&cpr=1104522721", headers), String.class);
+
+		// log result. result = 0 is "Match"
 		logger.info(restServiceResponse.toString());
 	}
 
