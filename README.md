@@ -26,7 +26,7 @@ The client will:
 
 1. Request a SAML token at the NemLog-in STS
 2. Exchange the SAML token for a JWT token (only for REST)
-3. Invoke the PID-CPR methods in the NemLog-in pre-production environment (domain ```devtest4-nemlog-in.dk```)
+3. Invoke the PID-CPR methods in the NemLog-in pre-production environment (domain ```test-devtest4-nemlog-in.dk```)
 
 
 ## Certificates

@@ -29,6 +29,8 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <!-- 2.7.x is the last line that runs on Java 8; without a version Maven picks the newest, which needs Java 17 -->
+                <version>2.7.18</version>
             </plugin>
         </plugins>
     </build>

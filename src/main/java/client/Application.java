@@ -27,9 +27,9 @@ public class Application implements CommandLineRunner {
 	private RestTemplate restTemplate;
 
 	private static ResponseEntity<String> restServiceResponse;
-	private static String requestUrl = "https://lookupservice.devtest4-nemlog-in.dk/api/lookup/pidmatchescpr";
-	private static String tokenUrl = "https://lookupservice.devtest4-nemlog-in.dk/api/accesstoken/issue";
-	private static String audience = "https://saml.wsp.lookupservice.devtest4-nemlog-in.dk";
+	private static String requestUrl = "https://lookupservice.test-devtest4-nemlog-in.dk/api/lookup/pidmatchescpr";
+	private static String tokenUrl = "https://lookupservice.test-devtest4-nemlog-in.dk/api/accesstoken/issue";
+	private static String audience = "https://saml.wsp.lookupservice.test-devtest4-nemlog-in.dk";
 
 	public static void main(String[] args) {
 		SpringApplication.run(Application.class, args);
